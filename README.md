@@ -14,10 +14,12 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 - CI/CD: GitHub Actions
 
 ## Repo structure (planned)
-- `frontend/` - HTML/CSS/JS resume site
-- `backend/` - Lambda + API logic
-- `infrastructure/` - IaC (Terraform/CloudFormation) + diagrams
-- `docs/` - notes, decisions, troubleshooting, screenshots
+| Folder | Purpose |
+|--------|---------|
+| [frontend](./frontend) | Static website (HTML, CSS, JavaScript) |
+| [backend](./backend) | AWS Lambda + API logic |
+| [infrastructure](./infrastructure) | Infrastructure as Code (Terraform / CloudFormation) |
+| [docs](./docs) | Architecture notes, diagrams, troubleshooting |
 
 ## Progress log
 - [ ] Step 1: Repo created + README scaffold
