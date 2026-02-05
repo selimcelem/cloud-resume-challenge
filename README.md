@@ -26,7 +26,7 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 - [x] Step 2: Frontend resume page (local)
 - [x] Step 3: S3 static hosting
 - [x] Step 4: CloudFront + HTTPS (ACM)
-- [ ] Step 5: Route 53 custom domain
+- [x] Step 5: Route 53 custom domain
 - [ ] Step 6: DynamoDB table + Lambda counter
 - [ ] Step 7: API Gateway integration
 - [ ] Step 8: CI/CD pipeline (GitHub Actions)
