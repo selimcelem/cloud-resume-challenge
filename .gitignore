@@ -1,0 +1,7 @@
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
