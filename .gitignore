@@ -1,6 +1,7 @@
 # Visual Studio / VS Code
 .vs/
 .vscode/
+docs/steps/.vs/
 
 # OS junk
 .DS_Store
