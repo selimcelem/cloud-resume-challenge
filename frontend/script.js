@@ -1,23 +1,13 @@
-js
+const API_URL = "https://9kj7akjnf2.execute-api.eu-west-1.amazonaws.com/prod/visitors";
 
-const API_URL = ""; // after backend is deployed, add the URL here
-
-async function loadVisitorCount() {
-    const el = document.getElementById("visitor-count");
-    if (!el) return;
-
-    if (!API_URL) {
-        el.textContent = "-";
-        return;
-    }
-
+async function updateVisitorCount() {
     try {
-        const res = await fetch(API_URL);
+        const res = await fetch(API_URL, { method: "GET" });
         const data = await res.json();
-        el.textContent = data.count || "-";
-    } catch {
-        el.textContent = "-";
+        document.getElementById("visitor-count").textContent = data.count;
+    } catch (err) {
+        document.getElementById("visitor-count").textContent = "—";
     }
 }
 
-docment.addEventListener("DOMContentLoaded", loadVisitorCount);
+updateVisitorCount();
