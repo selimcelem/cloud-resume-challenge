@@ -21,18 +21,25 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 | [infrastructure](./infrastructure) | Infrastructure as Code (Terraform / CloudFormation) |
 | [docs](./docs) | Architecture notes, diagrams, troubleshooting |
 
-## Progress log
-- [x] Step 1: Repo created + README scaffold
-- [x] Step 2: Frontend resume page (local)
-- [x] Step 3: S3 static hosting
-- [x] Step 4: CloudFront + HTTPS (ACM)
-- [x] Step 5: Route 53 custom domain
-- [ ] Step 6: DynamoDB table + Lambda counter
-- [ ] Step 7: API Gateway integration
-- [ ] Step 8: CI/CD pipeline (GitHub Actions)
-- [ ] Step 9: IaC implementation
-- [ ] Step 10: Tests + polish
+## Progress log (Cloud Resume Challenge – AWS)
+- [x] 1. Certification (CLF-C02)
+- [x] 2. HTML
+- [x] 3. CSS
+- [x] 4. Static Website (S3)
+- [x] 5. HTTPS (CloudFront)
+- [x] 6. DNS (Custom domain)
+- [x] 7. JavaScript (visitor counter UI)
+- [x] 8. Database (DynamoDB)
+- [x] 9. API (API Gateway + Lambda)
+- [x] 10. Python (boto3 in Lambda)
+- [ ] 11. Tests
+- [ ] 12. Infrastructure as Code (SAM or Terraform)
+- [ ] 13. Source Control (backend repo separation)
+- [ ] 14. CI/CD (Back end)
+- [ ] 15. CI/CD (Front end)
+- [ ] 16. Blog post
+
 
 ## Links
-- Live site: (coming soon)
+- Live site: https://selimcelem.com
 - Challenge: https://cloudresumechallenge.dev/
