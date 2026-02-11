@@ -6,3 +6,9 @@ docs/steps/.vs/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
