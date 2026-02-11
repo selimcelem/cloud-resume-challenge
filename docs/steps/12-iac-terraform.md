@@ -49,7 +49,7 @@ terraform apply
 
 Current API endpoint:
 
-<INSERT YOUR NEW API URL HERE>
+https://5jryt6hshh.execute-api.eu-west-1.amazonaws.com/prod/visitors
 
 
 ## Verification
