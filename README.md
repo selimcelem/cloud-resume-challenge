@@ -33,7 +33,7 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 - [x] 9. API (API Gateway + Lambda)
 - [x] 10. Python (boto3 in Lambda)
 - [x] 11. Tests
-- [ ] 12. Infrastructure as Code (SAM or Terraform)
+- [x] 12. Infrastructure as Code (SAM or Terraform)
 - [ ] 13. Source Control (backend repo separation)
 - [ ] 14. CI/CD (Back end)
 - [ ] 15. CI/CD (Front end)
