@@ -64,3 +64,46 @@ resource "aws_lambda_function" "visitor_counter" {
   }
 }
 
+# ---------------------------
+# API Gateway (HTTP API)
+# ---------------------------
+
+resource "aws_apigatewayv2_api" "visitor_api" {
+  name          = "visitor-counter-api-tf"
+  protocol_type = "HTTP"
+
+  cors_configuration {
+    allow_origins = ["https://selimcelem.com", "https://www.selimcelem.com"]
+    allow_methods = ["GET", "OPTIONS"]
+    allow_headers = ["content-type"]
+  }
+}
+
+resource "aws_apigatewayv2_integration" "visitor_integration" {
+  api_id                 = aws_apigatewayv2_api.visitor_api.id
+  integration_type       = "AWS_PROXY"
+  integration_uri        = aws_lambda_function.visitor_counter.invoke_arn
+  integration_method     = "POST"
+  payload_format_version = "2.0"
+}
+
+resource "aws_apigatewayv2_route" "get_visitors" {
+  api_id    = aws_apigatewayv2_api.visitor_api.id
+  route_key = "GET /visitors"
+  target    = "integrations/${aws_apigatewayv2_integration.visitor_integration.id}"
+}
+
+resource "aws_apigatewayv2_stage" "prod" {
+  api_id      = aws_apigatewayv2_api.visitor_api.id
+  name        = "prod"
+  auto_deploy = true
+}
+
+# Allow API Gateway to invoke Lambda
+resource "aws_lambda_permission" "allow_apigw" {
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.visitor_counter.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_apigatewayv2_api.visitor_api.execution_arn}/*/*"
+}

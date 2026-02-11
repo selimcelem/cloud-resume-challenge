@@ -1,4 +1,4 @@
-const API_URL = "https://9kj7akjnf2.execute-api.eu-west-1.amazonaws.com/prod/visitors";
+const API_URL = "https://5jryt6hshh.execute-api.eu-west-1.amazonaws.com/prod/visitors";
 
 async function updateVisitorCount() {
     try {
