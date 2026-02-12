@@ -12,7 +12,7 @@ resource "aws_dynamodb_table" "visitor_counter" {
 
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_dir  = "${path.module}/lambda_src"
+  source_dir  = "${path.module}/../../backend/visitor_counter/src"
   output_path = "${path.module}/lambda_build/visitorCounter.zip"
 }
 

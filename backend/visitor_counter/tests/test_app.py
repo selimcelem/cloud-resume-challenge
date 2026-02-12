@@ -28,7 +28,8 @@ def test_lambda_increments_counter(aws_region):
     table.put_item(Item={"id": "main", "count": 0})
 
     # Import AFTER mock/table setup (because app.py creates boto3 resources at import time)
-    from backend.visitor_counter.app import lambda_handler
+    os.environ["TABLE_NAME"] = "visitor-counter"
+    from backend.visitor_counter.src.app import lambda_handler
 
     r1 = lambda_handler({}, None)
     body1 = json.loads(r1["body"])

@@ -40,7 +40,6 @@ terraform init
 terraform plan
 terraform apply
 
-
 ## Result
 
 - Backend infrastructure is now fully reproducible via code
@@ -57,6 +56,30 @@ https://5jryt6hshh.execute-api.eu-west-1.amazonaws.com/prod/visitors
 terraform plan
 
 Output: “No changes. Infrastructure matches configuration.”
+
+## Drift Prevention Refactor
+
+After completing the Terraform migration, the Lambda deployment source was aligned with the tested backend code to eliminate deployment/test drift.
+
+Originally:
+
+- Terraform deployed from `infrastructure/terraform/lambda_src/`
+- Pytest validated code in `backend/visitor_counter/`
+
+This created a risk where tests could pass while different code was being deployed.
+
+To resolve this:
+
+- Lambda source was moved to `backend/visitor_counter/src/`
+- Terraform `archive_file.source_dir` was updated to `../../backend/visitor_counter/src`
+- The deprecated `lambda_src/` directory was removed
+- Tests were updated to import from the new module path
+
+Result:
+
+- Single source of truth for Lambda code
+- Tested code equals deployed code
+- CI/CD (Step 13) will validate the actual production artifact
 
 ## Next Step
 
