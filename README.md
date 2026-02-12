@@ -34,10 +34,9 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 - [x] 10. Python (boto3 in Lambda)
 - [x] 11. Tests
 - [x] 12. Infrastructure as Code (SAM or Terraform)
-- [ ] 13. Source Control (backend repo separation)
-- [ ] 14. CI/CD (Back end)
-- [ ] 15. CI/CD (Front end)
-- [ ] 16. Blog post
+- [x] 13. Source Control (backend repo separation)
+- [x] 14. CI/CD (Back end)
+- [x] 15. CI/CD (Front end)
 
 
 ## Links
