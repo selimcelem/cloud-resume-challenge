@@ -7,6 +7,13 @@ terraform {
       version = "~> 5.0"
     }
   }
+   backend "s3" {
+    bucket         = "selimcelem-cloud-resume-tfstate"
+    key            = "cloud-resume-challenge/terraform.tfstate"
+    region         = "eu-west-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+   }
 }
 
 provider "aws" {
