@@ -10,16 +10,23 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 - DNS + TLS: Route 53 + ACM
 - Visitor counter backend: API Gateway + AWS Lambda
 - Database: DynamoDB
-- Infrastructure as Code: (Terraform or CloudFormation)
+- Infrastructure as Code: Terraform (remote state + DynamoDB locking)
 - CI/CD: GitHub Actions
 
-## Repo structure (planned)
+## Related Repository
+
+The frontend (static website hosted on S3 + CloudFront) lives in a separate repository:
+
+https://github.com/selimcelem/cloud-resume-frontend
+
+The frontend consumes the API Gateway endpoint defined in this repository to retrieve and increment the visitor counter.
+
+## Repo structure
 | Folder | Purpose |
 |--------|---------|
-| [frontend](./frontend) | Static website (HTML, CSS, JavaScript) |
 | [backend](./backend) | AWS Lambda + API logic |
-| [infrastructure](./infrastructure) | Infrastructure as Code (Terraform / CloudFormation) |
-| [docs](./docs) | Architecture notes, diagrams, troubleshooting |
+| [infrastructure](./infrastructure) | Terraform infrastructure definitions |
+| [docs](./docs) | Step-by-step challenge documentation |
 
 ## Progress log (Cloud Resume Challenge – AWS)
 - [x] 1. Certification (CLF-C02)
@@ -42,3 +49,5 @@ Build and deploy a cloud-hosted resume website with a visitor counter, infrastru
 ## Links
 - Live site: https://selimcelem.com
 - Challenge: https://cloudresumechallenge.dev/
+- Frontend repo: https://github.com/selimcelem/cloud-resume-frontend
+
